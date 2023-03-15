@@ -1,2 +1,2 @@
 # pratiquejs
-mes pratiques avec javascript
+Mes pratiques avec javascript
