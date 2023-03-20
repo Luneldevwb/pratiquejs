@@ -22,8 +22,8 @@ let calc = (a,b) => a + b
 console.log(calc(2,4));
 console.log(calc(8,4));
 //on peut ou ne pas mettre les accolades si c4est une petite function.
-//function expression
 
+//function expression
 // let calc = function (a, b) {
 //     return(a + b);
 // } 
@@ -38,3 +38,18 @@ console.log(calc(8,4));
 
 // let anotherNum = retVar();
 // console.log(anotherNum);
+
+//методы и своиства строк чисел: методы это вспомагательная функция,а своиства это вспомогательное значение. 
+let str = "test";
+ console.log(str.length);// своиства
+ console.log(str.toLocaleUpperCase()); //Methodes on met toujours les '()' a la fin.
+ console.log(str.toLocaleLowerCase());
+
+// let twelve = "12.1";
+// console.log(Math.round(twelve));
+
+let twelve = "12.5px";
+console.log(parseInt(twelve));
+console.log(parseFloat(twelve));
+
+
