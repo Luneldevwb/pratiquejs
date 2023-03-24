@@ -120,3 +120,25 @@ for (let key in options) {
 }
 //Determination de la longueur de l'object
 console.log(Object.keys(options).length);
+
+//Massives et pseudomassives
+let arr = [1,15,3],
+    i = arr.sort(comparNum);
+function comparNum(a,b) {
+    return a-b;
+}
+console.log(arr);
+
+// Объектно-ориентированное программирование (ООП)
+let soldier = {
+    health: 400,
+    armor: 1000
+};
+
+let mike = {
+    health: 200
+};
+
+mike.__proto__ = soldier; //proto= prototype
+console.log(mike);
+console.log(mike.armor);
