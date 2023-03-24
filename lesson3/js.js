@@ -71,9 +71,28 @@ function learnJs(lang, Callback) {
     Callback();
 }
 
-learnJs("Javascript", function() {
+function done() {
     console.log("3rd lesson done!")
-})
+}
+learnJs("Javascript", done);
 
+//OU
 
+// learnJs("Javascript", function() {
+//     console.log("3rd lesson done!")
+// })
+
+function nomination(name, Callback) {
+    console.log("I'm " + name);
+    Callback();
+}
+// function appelation() {
+//     console.log("Nice to meet you!");
+// }
+// nomination("Lunel", appelation);
+ 
+//Ou
+nomination("Lunel", function() {
+    console.log("Nice to meet you!");
+});
 
