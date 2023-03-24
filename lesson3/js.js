@@ -96,3 +96,27 @@ nomination("Lunel", function() {
     console.log("Nice to meet you!");
 });
 
+//PRACTICE WITH OBJECT
+
+let options = {
+    width: 1024,
+    height: 1024,
+    name: "test"
+};
+console.log(options.width);
+options.bool = false;  //ajouter un elt dans l'object.
+options.colors = {
+    border: "black",
+    bg: "red"
+};
+console.log(options);
+
+//Suppresion d'un element dans l'objet
+delete options.bool; 
+
+//Ranger les elements dans l'object
+for (let key in options) {
+    console.log('Свойствo ' + key  + ' имеет значение ' + options[key]);
+}
+//Determination de la longueur de l'object
+console.log(Object.keys(options).length);
