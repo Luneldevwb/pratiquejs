@@ -122,12 +122,66 @@ for (let key in options) {
 console.log(Object.keys(options).length);
 
 //Massives et pseudomassives
-let arr = [1,15,3],
-    i = arr.sort(comparNum);
+
+//METHODES
+// let arr = ["first", 2, 3, "four", 5];
+// arr[99] = 99; //c'est de ne pas donner un indexe fixe a array,car ca peut donner une erreur
+
+// // arr.pop(); //permet de supprimer le dernier element de array
+// // arr.push("5"); //permet d'ajouter un element dans array au dernier rang.
+// // arr.shift(); //permet de supprimer le 1er elemnt
+// // arr.unshift("6") //permet d'ajouter un element au debut de  array .
+// console.log(arr.length); //on aura 100 car ca prend le dernier indexe plus 1.
+
+// arr.forEach(function(item, i, mass) {
+//     console.log(i + ': ' + item + ' (массив: ' + mass + ')');
+
+// }) //ici la function prend 3 arguments,mais selon le besoin.
+// console.log(arr);
+
+//nouvelle methode massive
+// let mass = [1,2,4,6,7];
+// for (let key in mass) {
+//     console.log(key); //on aura juste les indexes et non les elemts de mass.
+// }
+// let mass = [1,2,4,6,7];
+// for (let key of mass) {
+//     console.log(key); //on aura les elemts de mass.
+// }
+
+
+
+//Ranger notre array
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+
+// let arr = [1,15,3],
+//     i = arr.sort(comparNum);
+// function comparNum(a,b) {
+//     return a-b;
+// }
+// console.log(arr);
+
+// let ans = prompt("", ""),
+//     arr = [];
+// arr = ans.split(','); //pour ajouter un separateur et permet de transformer un string en massiv ex.une virgule,slash et autres
+// console.log(arr);
+
+// let arr = ['aaa', 2, 23, 'aaw'],
+//     i = arr.join(', '); //pour ajouter un separateur et permet de transformer un massiv en string  ex.une virgule,slash et autres
+// console.log(arr); // on aura juste le massiv 
+// console.log(i); //on aura juste les elts de arr en string sans les []
+
+let arr = [2,23,1,24, 'ycd', 'wer', 'zaw'],
+    i = arr.sort(comparNum); //pour classer les elements par ordre alphabetique,mais avec les chiffres il faut ajouter une callback function.
 function comparNum(a,b) {
     return a-b;
 }
-console.log(arr);
+console.log(arr); 
+
+//PSEUDOMASSIV n'a pas de methodes et proprietes
 
 // Объектно-ориентированное программирование (ООП)
 let soldier = {
