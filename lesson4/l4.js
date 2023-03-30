@@ -6,3 +6,5 @@
 //Methode 1
 
 console.log(typeof(String(null)));
+
+alert( null || 2 && 3 || 4 );
