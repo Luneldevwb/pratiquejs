@@ -5,7 +5,52 @@
 //-to string(transformer un elemnt en string)
 //Methode 1
 
-// console.log(typeof(String(null)));
+console.log(typeof(String(9)));
+
+//Methode 2
+console.log('ww' + 5); //en utilisant un string vide ou un string simplement. 
+console.log('https://www.vk.com/catalog/', + 5); //ca peut permettre d'aller prendre directement l'element souhaiter
+
+// to Number (ransformer un elemnt en number)
+//Methode 1
+console.log(typeof(Number('4')));
+
+//Methode 2
+console.log(typeof((+'4'))); // il suffit d'ajouter le + devant le string afin de le transformer en number.
+console.log(typeof((5 + +'4')));
+
+//Methode 3
+console.log(typeof(parseInt('15px', 10))); //on peut aussi utiliser parseInt pour transformer un string en number.
+
+// let ans = +prompt('Hello!', ''); // Pour transformer la reponse de l'utilisateur en number directemnt
+
+//Operateurs logiques
+//0, '', null, undefined et NaN donneront tjrs comme reponse 'false'
+
+//Methode 1
+
+// let switcher = null;
+
+// if (switcher) {
+//     console.log('working...'); // On aura une ligne vide, car null donne tjrs false et donc la condition ne sera pas validee.
+// }
+// Reponse : rien(vide)
+
+
+let switcher = 1;
+
+if (switcher) {
+    console.log('working...'); // On aura true car 1 # de 0, ce qui verifiera la fonction. 
+}
+// Reponse : working...
+
+//Methode 2
+console.log(typeof(Boolean('4'))); // Pour transformer un elenent en type boolean
+
+//Methode 3
+console.log(typeof(!!'4')); // on ajoute deux points d'exclamation pour transformer un element en boolean.
+
+
 
 
 
