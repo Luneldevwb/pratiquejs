@@ -55,14 +55,30 @@ let div = document.createElement('div'),
     text = document.createTextNode('I was here!'); //Creation d'1 texte sans tag.
 div.classList.add('black');
 // document.body.appendChild(div); // pour ajouter un elemnt au bas de la lignee parentale.
-// wrapper.appendChild(div);
+wrapper.appendChild(div);
 
 div.style.width = '100px';
-div.style.height = '100px';
+div.style.height = '20px';
 div.style.backgroundColor = '#54cbcb';
 div.style.marginTop = '20px';
 
-document.body.insertBefore(div, circle[0]); //ajouter un element devant un autre.
+//Ajouter un texte ou code html dans une page
+
+// div.innerHTML = '<h1>Hello world!</h1>';
+div.textContent = 'Hello world!' //pour ajouter text venant de l'exterieur,afin de preserver le code initial on utilise cette methode.
+
+
+
+// document.body.insertBefore(div, circle[0]); //ajouter un element devant un autre,on met le nom de l'elmt qu'on veut ajouter + celui devant lequel on veut acoompagner de son indice.
+// wrapper.insertBefore(div, heart[0]);
+
+//Supprimer un element
+// document.body.removeChild(circle[0]);
+
+//Remplacer un element dans le document html
+// document.body.replaceChild(btn[2], circle[2]) 
+
+
 
 
 
