@@ -11,7 +11,7 @@ console.log(typeof(String(9)));
 console.log('ww' + 5); //en utilisant un string vide ou un string simplement. 
 console.log('https://www.vk.com/catalog/', + 5); //ca peut permettre d'aller prendre directement l'element souhaiter
 
-// to Number (ransformer un elemnt en number)
+// to Number (transformer un elemnt en number)
 //Methode 1
 console.log(typeof(Number('4')));
 
