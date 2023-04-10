@@ -5,28 +5,26 @@ body {
     box-sizing: border-box;
 }
 
-.circle {
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-    background: blue;
-    margin: 10px;
-}
-.wrapper {
-    display: flex;
-    justify-content: flex-start;
-}
-.wrapper .heart {
-    margin-right: 10px;
-}
-.heart img {
-    width: 100px;
-    height: 100px;
-}
+button {
+    width: 200px;
+    height: 75px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #8dc0f2;
+    font-size: larger;
+    border: none;
 
-.black {
-    color: #fff;
-    text-align: center;
-    padding: 20px;
 
+}
+button:hover {
+    transition: all 0.4s;
+    background: #a9b4e9ba;
+    transform: scale(1.03);
+    border-radius: 10px;
+}
+a {
+    text-decoration: none;
+    display: block;
+    margin-top: 40px;
+    color: unset;
 }
