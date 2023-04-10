@@ -1,7 +1,11 @@
 //События и их обработчики
 //onclick="alert('You click on 1 button')" ce n'est pas recommende d'utiliser directement le script dans html
 
+<<<<<<< HEAD
 let btn = document.querySelector('button'),
+=======
+let btn = document.getElementsByTagName('button'),
+>>>>>>> main
     wrap = document.querySelector('.wrapper'),
     link = document.querySelector('a'); 
 
@@ -13,6 +17,7 @@ let btn = document.querySelector('button'),
 // }; 
 //la 1ere fonction sera annulee,au profit de la nouvelle,pour eviter cela on utlise addeEventListner methode
 //Evenemment click
+<<<<<<< HEAD
 // btn[0].addEventListener('click', function(event) {
 //     // console.log(event);//pour savoir quels elements contient l'object.
 //     // let target = event.target;
@@ -40,6 +45,23 @@ btn.forEach( function(item) {
 //     alert('You again click on 1st button');
 // });
 
+=======
+btn[0].addEventListener('click', function(event) {
+    // console.log(event);//pour savoir quels elements contient l'object.
+    // let target = event.target;
+    // target.style.display = 'none';// on peut utiliser target separement.
+    console.log('Event was done: ' + event.type + ' on element ' + event.target);
+});//pour savoir quel type d'evenements a ete realise.
+
+wrap.addEventListener('click', function() {
+    console.log('Event was done: ' + event.type + ' on element ' + event.target);
+});
+
+// btn[0].addEventListener('click', function() {
+//     alert('You again click on 1st button');
+// });
+
+>>>>>>> main
 
 //Evenemment mouse
 // btn[0].addEventListener('mouseenter', function() {
