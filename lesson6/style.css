@@ -19,7 +19,7 @@ button {
 button:hover {
     transition: all 0.4s;
     background: #a9b4e9ba;
-    transform: scale(1.03);
+    transform: scale(.9);
     border-radius: 10px;
 }
 a {
