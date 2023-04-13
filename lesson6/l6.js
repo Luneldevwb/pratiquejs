@@ -32,7 +32,7 @@ link.addEventListener('click', function(event) {
 });
 
 //pour utiliser tout les elements aussitot
-btn.forEach( function(item) {
+btn.forEach(function(item) {
     item.addEventListener('mouseleave', function() {
         console.log('Log out!');
     });
