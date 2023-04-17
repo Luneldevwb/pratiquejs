@@ -1,0 +1,24 @@
+body {
+    position: relative;
+    padding: 40px;
+    margin: 40px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 200px;
+    height: 75px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #8dc0f2;
+    font-size: larger;
+    border: none;
+
+
+}
+button:hover {
+    transition: all 0.4s;
+    background: #a9b4e9ba;
+    transform: scale(.9);
+    border-radius: 10px;
+}
