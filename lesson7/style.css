@@ -1,13 +1,25 @@
 body {
-    position: relative;
+    /* position: relative; */
     padding: 40px;
     margin: 40px;
     box-sizing: border-box;
 }
-
+.wrapper {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    border: 1px solid tomato;
+    margin-bottom: 10px;
+}
+.wrapper .elem {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: tomato;
+}
 button {
-    width: 200px;
-    height: 75px;
+    width: 100px;
+    height: 50px;
     border-radius: 4px;
     cursor: pointer;
     background: #8dc0f2;
@@ -21,4 +33,8 @@ button:hover {
     background: #a9b4e9ba;
     transform: scale(.9);
     border-radius: 10px;
+}
+
+.btn-block {
+    display: inline;
 }
