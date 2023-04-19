@@ -1,57 +1,35 @@
-//Скрипты и время их выполнения. setTimeout и setInterva
-// let timeId = setTimeout(sayHello, 3000); //ca permet de lancer la fonction aprs une duree donnee.
+//Параметры документа, окна и работа с ними/ parametres du document,de la fenetre(window) et leur utilisation.
 
-// clearTimeout(timeId); // ca permet d'arreter la methode setTimeout
-// function sayHello() {
-//     alert('Hello world!');
-// }
+let box = document.querySelector('.box'),
+    btn = document.querySelector('.btn');
 
-// let timeId = setInterval(sayHello, 3000); //ca permet de lancer la fonction aprs une duree donnee par intervalle.
+let width = box.clientWidth, // pour avoir la valeur de  la largeur en prenant en compte les padding. on ne met pas de parentheses car c'est une propriete.
+    height = box.clientHeight;// pour avoir la valeur de  l'hauteur en prenant en compte les padding. 
 
-// clearTimeout(timeId); // ca permet d'arreter la methode setTimeout
-// function sayHello() {
-//     console.log('Hello world!');
-// }
+//let width = box.offsetWidth, // pour avoir la valeur de  la largeur en prenant en compte tout les parametres(border,padding,scroll). on ne met pas de parentheses car c'est une propriete.
+//height = box.offsetHeight;// pour avoir la valeur de  l'hauteur en prenant en compte tout les parametres(border,padding,scroll(pas la totalité)). 
 
-//fonction recursive 
-// let timeId = setTimeout(function log() {
-//     console.log('Hello!');
-//     setTimeout(log, 2000);
-// });
+// let width = box.scrollWidth, // pour avoir la valeur de  la largeur en prenant en compte tout les parametres(border,padding,scroll). on ne met pas de parentheses car c'est une propriete.
+//     height = box.scrollHeight;// pour avoir la valeur de  l'hauteur en prenant en compte tout les parametres(border,padding,scroll( la totalité)). 
+console.log(width);
+console.log(height);
+//console.log(box.getBoundingClientRect()); //pour obtenir les coordonnees d'un elmt.
+//console.log(box.getBoundingClientRect().left); //pour obtenir une coordonnees specifique d'un elmt.
+console.log(document.documentElement.clientWidth);//pour les coordonnees de notre document(la largeur)
+console.log(document.documentElement.clientHeight);
 
-let btn = document.querySelector('.btn'),
-    box = document.querySelector('.elem');
+console.log(document.documentElement.scrollTop);
 
-function myAnimation() {
-    let pos = 0;
+//OU  
 
-    let id = setInterval(frame, 10);
-    function frame() {
-        if (pos == 350) {
-            clearInterval(id);
-        } else {
-            pos++;
-            box.style.top = pos + 'px';
-            box.style.left = pos + 'px';
+document.documentElement.scrollTop = 0; //C'EST UNE PROPRIETE TRES UTILISEE DANS LA PRATIQUE.
 
-        }
-    } 
-}
-btn.addEventListener('click', myAnimation);
+//La methode scrollBy et scrollTo
+scrollBy(0, 300); // ca prend deux coordonnees x et y,permet de scroller par rapport au point initial du scroll.
+scrollTo(0, 300); // un plus utiliser par rapport a scrollBy permet de scroller par rapport au point initial(haut de la page) du scroll
 
-//Methode par delegation
-let btnBlock = document.querySelector('.btn-block'),
-    btns = document.getElementsByTagName('button');
-btnBlock.addEventListener('click', function(event) {
-    // if ( event.target && event.target.tagName == "BUTTON") {
-    //     console.log('Salut!');
-    // } //Methode par delegation avec tout les elements.
-
-        // if ( event.target && event.target.classList.contains('first')) {
-        //     console.log('Salut!');
-        // }  //Methode par delegation en ciblant juste un seul element par rapport a sa classe.
-
-        if ( event.target && event.target.matches('button.first')) {
-            console.log('Salut!');
-        } //Methode par delegation en ciblant juste un seul element par rapport a sa classe avec la methode matches.
-});  
+btn.addEventListener('click', function() {
+    //box.style.height = box.scrollHeight + 'px';// parce que cette propriete s'ecrit sans px,voila pourquoi on ajoute 'px' 
+    //console.log(box.scrollTop);// pour voir combien on a deja parcouru depuis qu'on scoll vers le bas
+    box.scrollTop = 0; // a chaque ca nous ramenera au debut content. l'un des parametres qu'on peut changer.  se
+});
