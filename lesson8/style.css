@@ -4,19 +4,6 @@ body {
     margin: 40px;
     box-sizing: border-box;
 }
-.wrapper {
-    position: relative;
-    width: 450px;
-    height: 450px;
-    border: 1px solid tomato;
-    margin-bottom: 10px;
-}
-.wrapper .elem {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background: tomato;
-}
 button {
     width: 100px;
     height: 50px;
@@ -25,6 +12,9 @@ button {
     background: #8dc0f2;
     font-size: larger;
     border: none;
+    margin: 0 auto;
+    display: block;
+    margin-top: 20px;
 
 
 }
@@ -35,6 +25,15 @@ button:hover {
     border-radius: 10px;
 }
 
-.btn-block {
-    display: inline;
+
+.box {
+    width: 400px;
+    height: 350px;
+    padding: 20px;
+    margin: 0 auto;
+    overflow: scroll;
+    border-bottom: 15px solid rgba(239, 234, 234, .25);
+    /* border-right: 15px solid rgba(239, 234, 234, .25); */
+    box-sizing: border-box;
+
 }
