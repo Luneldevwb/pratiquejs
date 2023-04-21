@@ -43,4 +43,22 @@ window.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+
+// Создаем таймер обратного отсчета на сайте
+
+// 1ere etape on cree une date limite    
+let deadline = '2023-10-21';
+
+// 2 etape on cree une qui nous permet d'obtenir et l'envoyer au span correspondant.
+
+function getTimeRemaining(endtime) {
+    let t = Date.parse(endtime) - Date.parse(new Date()),
+        seconds = Math.floor((t/1000) % 60),
+        minutes =  Math.floor((t/1000/60) % 60),
+        hours =  Math.floor((t/(1000*60*60)));
+        //hours =  Math.floor((t/1000/60/60) % 24) //les heures
+       // days = Math.floor((t/(1000*60*60*24))) //pour les jours
+}
+
 });
+
