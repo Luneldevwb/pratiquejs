@@ -62,7 +62,7 @@ window.addEventListener('DOMContentLoaded', function () {
         // on cree un object pour obtenir un resultat apres l'execution de la fonction.
         return {
             'total': t,
-            'hours': hours,
+            'hours' : hours,
             'minutes': minutes,
             'seconds': seconds
 
@@ -86,19 +86,38 @@ window.addEventListener('DOMContentLoaded', function () {
         function updateClock() {
             // on cree un parametre de controle t
             let t = getTimeRemaining(endtime); // deadline vient en tant que argument dans endtime.
-            hours.textContent = t.hours;
-            minutes.textContent = t.minutes; // pour mettre a jour notre  timer(hours,minutes,seconds) on doit les obtenir de l'object t,car c'est labas que se trouve la maj de chaque h, m et s.
-
-            seconds.textContent = t.seconds;
-
-            // 5 etape il nous faut creer une condition pour arreter le timer une fois le temps epuiser.
             
-            if(t.total < 0) {
-                clearInterval(timeInterval);
+            // cette function nous donnera la possibilite de d'ajouter un zero devant les chiffres de 0 a 9
+
+            function addZero(num) {
+                if(num <= 9) {
+                    return '0' + num;
+                } else return num;
             }
+
+            hours.textContent = addZero(t.hours);
+            minutes.textContent = addZero(t.minutes); // pour mettre a jour notre  timer(hours,minutes,seconds) on doit les obtenir de l'object t,car c'est labas que se trouve la maj de chaque h, m et s.
+
+            seconds.textContent = addZero(t.seconds);
+            
+            // 4.1 etape il nous faut creer une condition pour arreter le timer une fois le temps epuiser.
+            
+            if(t.total <= 0) {
+                clearInterval(timeInterval);
+
+                //  on va ecrire un script pour avoir le format 00.00.00 a la fin du decompte.
+
+                hours.textContent = '00';
+                minutes.textContent = '00';
+                seconds.textContent = '00';
+            } 
 
 
         }
+
+        
+
+
 
     }       
     
