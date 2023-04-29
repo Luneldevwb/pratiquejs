@@ -1,35 +1,52 @@
-//Параметры документа, окна и работа с ними/ parametres du document,de la fenetre(window) et leur utilisation.
+// Constructors and classes = nous permet de creer des elements de mm types par expl des articles pour une boutique en ligne,des videos,ou nouvel utilisateur du site.
+// Etant donne que cette une fonction elle peut avoir une propriete et methode.
+// function User(name, id) {
+//     this.name = name;
+//     this.id = id;
+//     this.human = true,
+//     this.hello = function() {
+//         console.log('Hello ' + this.name + '!');
+//     }
+// }
 
-let box = document.querySelector('.box'),
-    btn = document.querySelector('.btn');
+// // Pour transferer les proprietes aux descendants
 
-let width = box.clientWidth, // pour avoir la valeur de  la largeur en prenant en compte les padding. on ne met pas de parentheses car c'est une propriete.
-    height = box.clientHeight;// pour avoir la valeur de  l'hauteur en prenant en compte les padding. 
+// User.prototype.exit = function(name) {
+//     console.log('User ' + this.name + ' log out');
+// }
 
-//let width = box.offsetWidth, // pour avoir la valeur de  la largeur en prenant en compte tout les parametres(border,padding,scroll). on ne met pas de parentheses car c'est une propriete.
-//height = box.offsetHeight;// pour avoir la valeur de  l'hauteur en prenant en compte tout les parametres(border,padding,scroll(pas la totalité)). 
+// let ivan = new User('Ivan', 25),
+//     alex = new User('Alex', 20);
+// console.log(ivan);
+// console.log(alex);
 
-// let width = box.scrollWidth, // pour avoir la valeur de  la largeur en prenant en compte tout les parametres(border,padding,scroll). on ne met pas de parentheses car c'est une propriete.
-//     height = box.scrollHeight;// pour avoir la valeur de  l'hauteur en prenant en compte tout les parametres(border,padding,scroll( la totalité)). 
-console.log(width);
-console.log(height);
-//console.log(box.getBoundingClientRect()); //pour obtenir les coordonnees d'un elmt.
-//console.log(box.getBoundingClientRect().left); //pour obtenir une coordonnees specifique d'un elmt.
-console.log(document.documentElement.clientWidth);//pour les coordonnees de notre document(la largeur)
-console.log(document.documentElement.clientHeight);
+// ivan.exit();
 
-console.log(document.documentElement.scrollTop);
 
-//OU  
+// Nouveaux standarts ES6
 
-document.documentElement.scrollTop = 0; //C'EST UNE PROPRIETE TRES UTILISEE DANS LA PRATIQUE.
+class User {
+    constructor(name, id) {
+        this.name = name;
+        this.id = id;
+        this.human = true;
+    }
+    hello() {
+    console.log(`Hello ${this.name}!`);
+    }
 
-//La methode scrollBy et scrollTo
-scrollBy(0, 300); // ca prend deux coordonnees x et y,permet de scroller par rapport au point initial du scroll.
-scrollTo(0, 300); // un plus utiliser par rapport a scrollBy permet de scroller par rapport au point initial(haut de la page) du scroll
+    exit() {
+        console.log(`User ${this.name} log out`);
+    }
+}
 
-btn.addEventListener('click', function() {
-    //box.style.height = box.scrollHeight + 'px';// parce que cette propriete s'ecrit sans px,voila pourquoi on ajoute 'px' 
-    //console.log(box.scrollTop);// pour voir combien on a deja parcouru depuis qu'on scoll vers le bas
-    box.scrollTop = 0; // a chaque ca nous ramenera au debut content. l'un des parametres qu'on peut changer.  se
-});
+let ivan = new User('Ivan', 25),
+    alex = new User('Alex', 20);
+console.log(ivan);
+console.log(alex);
+
+ivan.hello();
+alex.hello();
+ivan.exit();
+
+
