@@ -47,7 +47,7 @@ window.addEventListener('DOMContentLoaded', function () {
     // Создаем таймер обратного отсчета на сайте
 
     // 1ere etape on cree une date limite    
-    let deadline = '2023-05-05';
+    let deadline = '2023-05-20';
 
     // 2 etape on cree une qui nous permet d'obtenir et l'envoyer au span correspondant.
 
@@ -123,5 +123,12 @@ window.addEventListener('DOMContentLoaded', function () {
     
 
     setClock('timer', deadline);
+
+    // Creation POP UP(Modal)
+
+    let more = document.querySelector('.more'),
+        overlay = document.querySelector('.overlay'),
+        close = document.querySelector('.popup-close');
+
 
 });
