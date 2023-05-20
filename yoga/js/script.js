@@ -130,5 +130,35 @@ window.addEventListener('DOMContentLoaded', function () {
         overlay = document.querySelector('.overlay'),
         close = document.querySelector('.popup-close');
 
+    more.addEventListener('click', function() {
+        overlay.style.display = 'block';
+        this.classList.add('more-splash');
+        // document.body.style.overflow = 'hidden';// Pour bloquer la page lors de l'apparition du popup. Pas obligatoire.
+    });
+
+    close.addEventListener('click', function() {
+        overlay.style.display = 'none';
+        close.classList.remove('more-splash');
+        // document.body.style.overflow = ''; // Pour debloquer la page lors de l'apparition du popup
+
+    });
+
+    
+    let details = document.querySelectorAll('.description-btn'),
+        numdetails = details.length;
+    // details.addEventListener('click', function() {
+    //     overlay.style.display = 'block';
+    //     this.classList.add('more-splash');
+    // });
+
+    for (let i = 0 ; i < numdetails; i++) {
+        details[i].addEventListener('click', function() {
+            overlay.style.display = 'block';
+            this.classList.add('more-splash');
+        });
+    }
+   
+
+
 
 });
