@@ -89,7 +89,7 @@
 // }
 // console.log(sayName.call(user, 'Smith')); //4. methode permettant d'appler manuellement la fonction.on lie parametre sous de string
 
-// console.log(sayName.apply(user, ['Double'])); // methode permettant d'appler manuellement la fonction.on lie parametre sous de massive.  S'il y d'elemts a ajouter c'est mieux d'utiliser  la methode apply
+// console.log(sayName.apply(user, ['Double'])); // methode permettant d'appler manuellement la fonction.on lie parametre sous forme de massive.  S'il y d'elemts a ajouter c'est mieux d'utiliser  la methode apply
 
 // function count(number) {
 //     return this * number;
@@ -109,7 +109,7 @@ btn.addEventListener('click', function() {
         console.log(this);//toutes fonctions incluses dans une autre avec this nous donnera window dans la console.
     }
     showThis() ;
-})
+});
 
 
 // Variantes pour faire appel a la fonction 
