@@ -1,0 +1,39 @@
+body {
+    /* position: relative; */
+    padding: 40px;
+    margin: 40px;
+    box-sizing: border-box;
+}
+button {
+    width: 100px;
+    height: 50px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #8dc0f2;
+    font-size: larger;
+    border: none;
+    margin: 0 auto;
+    display: block;
+    margin-top: 20px;
+
+
+}
+button:hover {
+    transition: all 0.4s;
+    background: #a9b4e9ba;
+    transform: scale(.9);
+    border-radius: 10px;
+}
+
+
+.box {
+    width: 400px;
+    height: 350px;
+    padding: 20px;
+    margin: 0 auto;
+    overflow: scroll;
+    border-bottom: 15px solid rgba(239, 234, 234, .25);
+    /* border-right: 15px solid rgba(239, 234, 234, .25); */
+    box-sizing: border-box;
+
+}
