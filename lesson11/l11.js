@@ -1,119 +1,42 @@
-// Constructors and classes = nous permet de creer des elements de mm types par expl des articles pour une boutique en ligne,des videos,ou nouvel utilisateur du site.
-// Etant donne que cette une fonction elle peut avoir une propriete et methode.
-// function User(name, id) {
-//     this.name = name;
-//     this.id = id;
-//     this.human = true,
-//     this.hello = function() {
-//         console.log('Hello ' + this.name + '!');
-//     }
-// }
+// JSON формат передачи данных
 
-// // Pour transferer les proprietes aux descendants
-
-// User.prototype.exit = function(name) {
-//     console.log('User ' + this.name + ' log out');
-// }
-
-// let ivan = new User('Ivan', 25),
-//     alex = new User('Alex', 20);
-// console.log(ivan);
-// console.log(alex);
-
-// ivan.exit();
-
-
-// Nouveaux standarts ES6
-
-// class User {
-//     constructor(name, id) {
-//         this.name = name;
-//         this.id = id;
-//         this.human = true;
-//     }
-//     hello() {
-//     console.log(`Hello ${this.name}!`);
-//     }
-
-//     exit() {
-//         console.log(`User ${this.name} log out`);
-//     }
-// }
-
-// let ivan = new User('Ivan', 25),
-//     alex = new User('Alex', 20);
-// console.log(ivan);
-// console.log(alex);
-
-// ivan.hello();
-// alex.hello();
-// ivan.exit();
-
-// Context d'appel (this)
-
-//'use strict'; 
-
-// function showThis(a, b) {
-//     console.log(this);
-//     function sum() {
-//         console.log(this);
-//         return a + b;
-//     }
-//     console.log(sum());
-// }
-// showThis(4, 5);
-// showThis(5, 5);
-
-// let obj = {
-//     a: 20,
-//     b: 25,
-//     sum: function () {
-//         console.log(this);
-//         function shout() {
-//             console.log(this);
-//         }
-//         shout();
+// let options = {
+//     width: 1366,
+//     height: 768,
+//     background: 'red',
+//     font: {
+//         size: '16px',
+//         color: '#fff'
 //     }
 // };
+// console.log(JSON.parse(JSON.stringify(options))); // On utilise la methode parse  afin de faire l'operation contraire. 
+// console.log(JSON.stringify(options)); // On utilise la methode stringfy afin de transformer les elet js au format json(les elts sont tjrs entre "" ).
 
-// obj.sum();
+let inputRub = document.getElementById('rub'),
+    inputUsd = document.getElementById('usd');
 
-// let user = {
-//     name: 'John'
-// };
+inputRub.addEventListener('input', () => {
+    let request = new XMLHttpRequest();
 
-// function sayName(surname) {
-//     console.log(this);
-//     console.log(this.name  + surname);
+    //Methods Ajax
+    //request.open(method(POST,GET), url, async, login,pass )
 
-// }
-// console.log(sayName.call(user, 'Smith')); //4. methode permettant d'appler manuellement la fonction.on lie parametre sous de string
+    request.open('GET', '../lesson11/current.json');
+    request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+    request.send();
 
-// console.log(sayName.apply(user, ['Double'])); // methode permettant d'appler manuellement la fonction.on lie parametre sous forme de massive.  S'il y d'elemts a ajouter c'est mieux d'utiliser  la methode apply
+    //Proprietes Ajax
+    //Status( ca peut 404 ou autre)
+    //StatusText(contient la reponse par expl ok ou not found)
+    // responseText (contient le texte et la reponse du serveur) / response
+    //readyState(l'etat actuel de la demande);
 
-// function count(number) {
-//     return this * number;
-// }
+    request.addEventListener('readystatechange', function() {
+        if(request.readyState === 4 && request.status == 200) {
+            let data = JSON.parse(request.response);
 
-// let double  = count.bind(2); // methode permettant d'appler manuellement la fonction.  
-// console.log(double(2));
-// console.log(double(3));
+            inputUsd.value = inputRub.value / data.usd;
+        } else inputUsd.value = 'Something was wrong!';
+    });
 
-// contexte de l'appel le cas du doc entier
-let btn = document.querySelector('button');
-
-btn.addEventListener('click', function() {
-    console.log(this);
-    this.style.backgroundColor = 'blue';
-    function showThis() {
-        console.log(this);//toutes fonctions incluses dans une autre avec this nous donnera window dans la console.
-    }
-    showThis() ;
 });
-
-
-// Variantes pour faire appel a la fonction 
-// 1. la console ne va pas afficher window comme reponse, mais undefined car ca fait partie des nouveaux standarts ES6. 
-// 2. Methode object- this egal object 
-// 3. constructor (new) - this = nouvel object cree.
-// 4. указание конкретного контекста- call, apply, bind 
