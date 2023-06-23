@@ -158,7 +158,44 @@ window.addEventListener('DOMContentLoaded', function () {
         });
     }
    
+    // Реализация скрипта отправки данных из формы
+    
+    let message = {
+        loading: 'Загрузка',
+        success: 'Спасибо! Скоро свяжемся с вами!',
+        failure: 'Что-то пошло не так...'
+    }
 
+    let form = document.querySelector('.main-form'),
+        input = form.querySelector('input'),
+        statusMessage = document.createElement('div');
+        statusMessage.classList.add('status');
+    
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        form.appendChild(statusMessage);
+        
+        let request = new XMLHttpRequest();
+        request.open('POST', 'server.php');
+        request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
+        let formData = new FormData(form);
+        request.send(formData);
+
+        request.addEventListener('readystatechange', function() {
+            if (request.readystate < 4) {
+                statusMessage.innerHTML = message.loading;
+            } else if (request.readyState === 4 && request.status == 200) {
+                statusMessage.innerHTML = message.success;
+            } else {
+                statusMessage.innerHTML = message.failure;
+            }
+        });
+
+        for(let i = 0; i < input.length; i++) {
+            input[i].value = '';
+        }
+
+    }); // On attribue a la forme et non au boutton/submit
 
 });
